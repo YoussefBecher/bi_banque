@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-
+/// Espacements et arrondis standard, pour garder des écrans cohérents.
 class AppSpacing {
   AppSpacing._();
 
@@ -8,13 +7,12 @@ class AppSpacing {
   static const double md = 16;
   static const double lg = 24;
   static const double xl = 32;
-  static const double xxl = 48;
+}
 
-  static const double radiusSm = 10;
-  static const double radiusMd = 16;
-  static const double radiusLg = 24;
+class AppRadius {
+  AppRadius._();
 
-  static const EdgeInsets screenPadding =
-  EdgeInsets.symmetric(horizontal: md, vertical: md);
-  static const EdgeInsets cardPadding = EdgeInsets.all(md);
+  static const double sm = 8;
+  static const double md = 12;
+  static const double lg = 16;
 }
