@@ -1,72 +1,56 @@
 import 'package:flutter/material.dart';
 
-/// Couleurs de marque de l'application.
 class AppColors {
   AppColors._();
 
-  static const Color primary = Color(0xFF0B3C6F);
-  static const Color primaryLight = Color(0xFF8DB7E8);
+  // Fonds (bleu nuit)
+  static const Color background = Color(0xFF0A1020);
+  static const Color surface = Color(0xFF111A2E);
+  static const Color surfaceElevated = Color(0xFF18233D);
+  static const Color border = Color(0xFF243152);
 
-  static const Color backgroundLight = Color(0xFFF4F6F9);
-  static const Color surfaceLight = Color(0xFFFFFFFF);
+  // Marque
+  static const Color primary = Color(0xFF4C7DFF);
+  static const Color gold = Color(0xFFD4AF37);
+  static const Color goldSoft = Color(0xFFE8CF7A);
 
-  static const Color backgroundDark = Color(0xFF0E1621);
-  static const Color surfaceDark = Color(0xFF16222F);
-}
+  // Sémantique (indicateurs)
+  static const Color success = Color(0xFF2ECC8F);
+  static const Color danger = Color(0xFFFF5C6C);
+  static const Color warning = Color(0xFFFFB547);
+  static const Color info = Color(0xFF4C9DFF);
 
-/// Couleurs sémantiques : hausse, baisse, avertissement, information.
-/// Elles changent selon le mode clair ou sombre.
-@immutable
-class AppSemanticColors extends ThemeExtension<AppSemanticColors> {
-  const AppSemanticColors({
-    required this.positive,
-    required this.negative,
-    required this.warning,
-    required this.info,
-  });
+  // Texte
+  static const Color textPrimary = Color(0xFFF2F5FB);
+  static const Color textSecondary = Color(0xFF9AA7C4);
+  static const Color textMuted = Color(0xFF66738F);
 
-  final Color positive;
-  final Color negative;
-  final Color warning;
-  final Color info;
-
-  static const AppSemanticColors light = AppSemanticColors(
-    positive: Color(0xFF1B7F4F),
-    negative: Color(0xFFC62F3B),
-    warning: Color(0xFFB7791F),
-    info: Color(0xFF1F6FB2),
+  // Dégradés
+  static const LinearGradient cardGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Color(0xFF1B2745), Color(0xFF111A2E)],
   );
 
-  static const AppSemanticColors dark = AppSemanticColors(
-    positive: Color(0xFF4CC38A),
-    negative: Color(0xFFFF7A85),
-    warning: Color(0xFFF2B84B),
-    info: Color(0xFF7DB8F0),
+  static const LinearGradient goldGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Color(0xFFE8CF7A), Color(0xFFD4AF37)],
   );
 
-  @override
-  AppSemanticColors copyWith({
-    Color? positive,
-    Color? negative,
-    Color? warning,
-    Color? info,
-  }) {
-    return AppSemanticColors(
-      positive: positive ?? this.positive,
-      negative: negative ?? this.negative,
-      warning: warning ?? this.warning,
-      info: info ?? this.info,
-    );
-  }
+  static const LinearGradient primaryGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Color(0xFF4C7DFF), Color(0xFF2D56D6)],
+  );
 
-  @override
-  AppSemanticColors lerp(ThemeExtension<AppSemanticColors>? other, double t) {
-    if (other is! AppSemanticColors) return this;
-    return AppSemanticColors(
-      positive: Color.lerp(positive, other.positive, t)!,
-      negative: Color.lerp(negative, other.negative, t)!,
-      warning: Color.lerp(warning, other.warning, t)!,
-      info: Color.lerp(info, other.info, t)!,
-    );
-  }
+  // Palette pour les graphiques (fl_chart)
+  static const List<Color> chartPalette = [
+    Color(0xFF4C7DFF),
+    Color(0xFFD4AF37),
+    Color(0xFF2ECC8F),
+    Color(0xFFFF5C6C),
+    Color(0xFFB07CFF),
+    Color(0xFF4CD4E8),
+  ];
 }
